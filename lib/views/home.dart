@@ -84,7 +84,7 @@ class Home extends StatelessWidget {
                                           width: 24,
                                         ),
                                         Text(
-                                          'Ruslan Badaev',
+                                          'About me',
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
@@ -101,15 +101,29 @@ class Home extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(18),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      color: Colors.purple[50],
+                      child: Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            color: Colors.black54,
+                          ),
+                          height: 640,
+                          width: 320,
+                          child: Text('asdada'),
+                        ),
+                      ),
+                    ),
                   ),
                   Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.blue,
+                    color: Colors.blue[50],
                   ),
                 ],
               ),
@@ -134,7 +148,7 @@ class Home extends StatelessWidget {
                       Text(
                         'Ruslan Badaev',
                         style: TextStyle(
-                          color: Colors.blueAccent.withOpacity(.6),
+                          color: Colors.black,
                           fontSize: 21,
                           fontWeight: FontWeight.bold,
                         ),
@@ -157,7 +171,7 @@ class Home extends StatelessWidget {
                           child: Text(
                             'About me',
                             style: TextStyle(
-                              color: Colors.blueAccent.withOpacity(.6),
+                              color: Colors.black.withOpacity(.6),
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
@@ -177,7 +191,7 @@ class Home extends StatelessWidget {
                           child: Text(
                             'Projects',
                             style: TextStyle(
-                              color: Colors.blueAccent.withOpacity(.6),
+                              color: Colors.black.withOpacity(.6),
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
@@ -197,7 +211,7 @@ class Home extends StatelessWidget {
                           child: Text(
                             'Contact me',
                             style: TextStyle(
-                              color: Colors.blueAccent.withOpacity(.6),
+                              color: Colors.black.withOpacity(.6),
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
