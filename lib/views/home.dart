@@ -128,7 +128,7 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            Column(
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -157,7 +157,7 @@ class Home extends StatelessWidget {
                   ),
                 ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
                       margin: EdgeInsets.all(12),
