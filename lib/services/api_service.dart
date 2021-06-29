@@ -37,6 +37,7 @@ class ApiService {
         'https://sun9-25.userapi.com/impg/s6ILKP9SdFPZKoduDZ1ogEmKSEjhVh__5fOHoA/JxOoTuWN8O0.jpg?size=720x1600&quality=96&sign=a457acb0e00e0f52c57c8ae49ac3b342&type=album',
         'https://sun9-54.userapi.com/impg/Vo7nxLT0Rsx8TDjMmTOTWXv8DMjZ01a2lfeBTg/RBd6wSgojAY.jpg?size=720x1600&quality=96&sign=9da31d893c52995a08106977dcbe524d&type=album',
         'https://sun9-67.userapi.com/impg/hC0QaPrpuRau49pQb9QpY4xHSUIYGEZuTcI_vA/ZQvWgxnGfJ0.jpg?size=720x1600&quality=96&sign=3b8615f82174692139752add85bf9611&type=album',
+        'https://sun9-26.userapi.com/impg/kzt5knHk8wlZ5oi4B_unra-d08GyUJaiIye5uw/SWDauQ28DJ8.jpg?size=720x1600&quality=96&sign=8e40df7cc3c1eca2e22e85752f122431&type=album',
       ],
     ),
     ScreenshotAlbum(
