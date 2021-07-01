@@ -5,7 +5,12 @@ class ApiService {
     ScreenshotAlbum(
       name: 'InSmartAgro',
       description: 'asdasdas',
-      tags: [],
+      tags: [
+        'Flutter',
+        'NFC',
+        'QR',
+        'Geolocation',
+      ],
       screenshots: [
         'https://sun9-60.userapi.com/impg/yMt4iCuzL19sCtK1iFHN5ul_a4cBVL0WFZMWkQ/RfDiz5jP22Q.jpg?size=720x1600&quality=96&sign=70c31d8307b6c0afdf50764193d8e608&type=album',
         'https://sun9-61.userapi.com/impg/3MUhCQccactMmYs_cUg_t_VmAzrykaGW3M3q2A/kgHCSYPDwEE.jpg?size=720x1600&quality=96&sign=42ad83335ac6816fff783b4d39000426&type=album',

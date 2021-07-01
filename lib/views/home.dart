@@ -220,6 +220,7 @@ class Home extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     color: Colors.purple[50],
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           //height: MediaQuery.of(context).size.height,
@@ -310,92 +311,200 @@ class Home extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(24),
+                        GetBuilder<AlbumController>(
+                          builder: (controller) => InkWell(
+                            onTap: () => {},
                             child: Container(
-                              decoration: BoxDecoration(
+                              child: ClipRRect(
                                 borderRadius: BorderRadius.circular(24),
-                                color: Colors.black54,
-                              ),
-                              height: 654,
-                              width: 300,
-                              child: Stack(
-                                alignment: AlignmentDirectional.topCenter,
-                                children: [
-                                  Center(
-                                    child: GetBuilder<AlbumController>(
-                                      builder: (controller) => CarouselSlider(
-                                        options: CarouselOptions(
-                                          height: 640,
-                                          aspectRatio: 16 / 9,
-                                          viewportFraction: .98,
-                                          initialPage: 0,
-                                          enableInfiniteScroll: true,
-                                          reverse: false,
-                                          autoPlay: true,
-                                          autoPlayInterval:
-                                              Duration(seconds: 2),
-                                          autoPlayAnimationDuration:
-                                              Duration(milliseconds: 800),
-                                          autoPlayCurve: Curves.fastOutSlowIn,
-                                          enlargeCenterPage: true,
-                                          //onPageChanged: callbackFunction,
-                                          scrollDirection: Axis.horizontal,
-                                        ),
-                                        items: controller
-                                            .albums[controller.currentAlbumId]
-                                            .screenshots
-                                            .map(
-                                          (i) {
-                                            return Builder(
-                                              builder: (BuildContext context) {
-                                                return ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(24),
-                                                  child: Container(
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              24),
-                                                      color: Colors.black54,
-                                                    ),
-                                                    child: Image.network(
-                                                      '${i}',
-                                                      fit: BoxFit.fill,
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                            );
-                                          },
-                                        ).toList(),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(24),
+                                        color: Colors.black54,
+                                      ),
+                                      height: 654,
+                                      width: 300,
+                                      child: Stack(
+                                        alignment:
+                                            AlignmentDirectional.topCenter,
+                                        children: [
+                                          Center(
+                                            child: CarouselSlider(
+                                              options: CarouselOptions(
+                                                height: 640,
+                                                aspectRatio: 16 / 9,
+                                                viewportFraction: .98,
+                                                initialPage: 0,
+                                                enableInfiniteScroll: true,
+                                                reverse: false,
+                                                autoPlay: true,
+                                                autoPlayInterval:
+                                                    Duration(seconds: 2),
+                                                autoPlayAnimationDuration:
+                                                    Duration(milliseconds: 800),
+                                                autoPlayCurve:
+                                                    Curves.fastOutSlowIn,
+                                                enlargeCenterPage: true,
+                                                //onPageChanged: callbackFunction,
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                              ),
+                                              items: controller
+                                                  .albums[
+                                                      controller.currentAlbumId]
+                                                  .screenshots
+                                                  .map(
+                                                (i) {
+                                                  return Builder(
+                                                    builder:
+                                                        (BuildContext context) {
+                                                      return ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(24),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                  context)
+                                                              .size
+                                                              .width,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        24),
+                                                            color:
+                                                                Colors.black54,
+                                                          ),
+                                                          child: Image.network(
+                                                            '${i}',
+                                                            fit: BoxFit.fill,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                              ).toList(),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 10,
+                                            child: Icon(
+                                              Icons.circle,
+                                              size: 18,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: 10,
-                                    child: Icon(
-                                      Icons.circle,
-                                      size: 18,
+                                    Container(
+                                      // height: MediaQuery.of(context).size.height * 0.3,
+                                      height: 654,
+                                      width: 300,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(24),
+                                        color: Colors.black54,
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            '${controller.albums[controller.currentAlbumId].name}',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 24,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 12,
+                                          ),
+                                          Text(
+                                            '${controller.albums[controller.currentAlbumId].description}',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 21,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 12,
+                                          ),
+                                          Wrap(
+                                            children: [
+                                              for (var tag in controller
+                                                  .albums[
+                                                      controller.currentAlbumId]
+                                                  .tags)
+                                                Card(
+                                                  margin: EdgeInsets.all(4),
+                                                  child: Padding(
+                                                    padding: EdgeInsets.all(8),
+                                                    child: Text(tag),
+                                                  ),
+                                                ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
+                            /*  GetBuilder<AlbumController>(
+                          builder: (controller) => Container(
+                            // height: MediaQuery.of(context).size.height * 0.3,
+                            width: MediaQuery.of(context).size.width * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: Colors.black54,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '${controller.albums[controller.currentAlbumId].name}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                  ),
+                                ),
+                                Text(
+                                  '${controller.albums[controller.currentAlbumId].description}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 21,
+                                  ),
+                                ),
+                                Wrap(
+                                  children: [
+                                    for (var tag in controller
+                                        .albums[controller.currentAlbumId].tags)
+                                      Card(
+                                        margin: EdgeInsets.all(4),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(8),
+                                          child: Text(tag),
+                                        ),
+                                      ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ), */
                           ),
                         ),
                       ],
                     ),
                   ),
                   Container(
+                    color: Colors.blue[50],
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.blue[50],
                   ),
                 ],
               ),
