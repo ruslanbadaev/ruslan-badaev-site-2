@@ -4,7 +4,7 @@ class ApiService {
   List<ScreenshotAlbum> album = [
     ScreenshotAlbum(
       name: 'InSmartAgro',
-      description: '',
+      description: 'asdasdas',
       tags: [],
       screenshots: [
         'https://sun9-60.userapi.com/impg/yMt4iCuzL19sCtK1iFHN5ul_a4cBVL0WFZMWkQ/RfDiz5jP22Q.jpg?size=720x1600&quality=96&sign=70c31d8307b6c0afdf50764193d8e608&type=album',
@@ -18,7 +18,7 @@ class ApiService {
     ),
     ScreenshotAlbum(
       name: 'InSmartRain',
-      description: '',
+      description: 'fdgdggd',
       tags: [],
       screenshots: [
         'https://sun9-35.userapi.com/impg/11H_ZD38hJhcLg6uiKktJDaOyDTmvWGh0KtH3A/CrNuwfRh2vg.jpg?size=720x1600&quality=96&sign=b5bd4703a817e72eabbecce336f12bff&type=album',
@@ -29,7 +29,7 @@ class ApiService {
     ),
     ScreenshotAlbum(
       name: 'Urban Control',
-      description: '',
+      description: 'fdgdfgngn',
       tags: [],
       screenshots: [
         'https://sun9-73.userapi.com/impg/Y8v7eywZAZKhwKkPK7JUiw1YYsbtTpqXqpHf9Q/2GhiMTW5GF4.jpg?size=720x1600&quality=96&sign=e7f8dcbe3df26a45c3f4087d51328f4a&type=album',
@@ -42,7 +42,7 @@ class ApiService {
     ),
     ScreenshotAlbum(
       name: 'Urban Control',
-      description: '',
+      description: 'dfgdfgdgdf',
       tags: [],
       screenshots: [
         'https://sun9-28.userapi.com/impg/GYCrR5AuBgSYpjs6lU2cwEwwxEaUfxb5xo10LA/yngwKOh9pPI.jpg?size=823x1600&quality=96&sign=b56d1ddc9df8e1e5563bfa40f992daaa&type=album',
@@ -53,7 +53,7 @@ class ApiService {
     ),
     ScreenshotAlbum(
       name: 'Interra - Кабинет Абонента',
-      description: '',
+      description: 'dfg gdf gd',
       tags: [],
       screenshots: [
         'https://sun9-41.userapi.com/impg/p3uhVmkwZF9If2rIDjJ9fZmabb7U7EJ0lekJHw/4CtgQ6dgArU.jpg?size=800x1600&quality=96&sign=e046187a7dab4fa71f94a34f272a40f2&type=album',
@@ -65,7 +65,7 @@ class ApiService {
     ),
     ScreenshotAlbum(
       name: 'CatWorm Client',
-      description: '',
+      description: 'd fgdfgdhgd',
       tags: [],
       screenshots: [
         'https://sun9-73.userapi.com/impg/Whhfo2KASgT35N7nrZAhiLl8-dlzLoIxad1UUQ/oWjhEenyd6k.jpg?size=720x1600&quality=96&sign=7b9328c0e5daf87b0b99c38d7dfd674f&type=album',
@@ -76,7 +76,7 @@ class ApiService {
     ),
     ScreenshotAlbum(
       name: 'King of the Stone Jungle',
-      description: '',
+      description: 'fg dfgddghg',
       tags: [],
       screenshots: [
         'https://sun9-70.userapi.com/impg/NxbFQBuaT8jAJjtIDaisPbdwZt1r6WgSUZAfFA/bfg3n-lcIno.jpg?size=486x1080&quality=96&sign=9a49343495fd80e5928a6cf4b7650d70&type=album',
@@ -85,8 +85,8 @@ class ApiService {
       ],
     ),
     ScreenshotAlbum(
-      name: 'King of the Stone Jungle',
-      description: '',
+      name: 'InStop',
+      description: ' dfgdhfdddf',
       tags: [],
       screenshots: [
         'https://sun9-31.userapi.com/impg/YPQv4PGgK2JYmP2qrwzL6P7eEj2TrYrK_WHHow/-m47XRCOxRs.jpg?size=800x1600&quality=96&sign=ea9d09ec309a58552a462f68915abdc7&type=album',
@@ -96,6 +96,6 @@ class ApiService {
     ),
   ];
   List<ScreenshotAlbum> getAllItems() {
-    return [];
+    return album;
   }
 }
