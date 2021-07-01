@@ -6,8 +6,10 @@ import 'package:ruslan_badaev_site/services/api_service.dart';
 class AlbumController extends GetxController {
   var _albums = List<ScreenshotAlbum>().obs;
   var _currentAlbumId = 0.obs;
+  var _showAppInfo = true.obs;
   List<ScreenshotAlbum> get albums => _albums.value;
   int get currentAlbumId => _currentAlbumId.value;
+  bool get showAppInfo => _showAppInfo.value;
 
   @override
   void onInit() {
@@ -22,6 +24,11 @@ class AlbumController extends GetxController {
 
   void setCurrentAlbumId(int id) {
     _currentAlbumId.value = id;
+    update();
+  }
+
+  void toggleAppInfo() {
+    _showAppInfo.value = !_showAppInfo.value;
     update();
   }
 }

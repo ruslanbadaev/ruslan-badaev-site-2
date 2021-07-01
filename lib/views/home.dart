@@ -223,6 +223,10 @@ class Home extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24),
+                            color: Colors.white.withOpacity(.6),
+                          ),
                           //height: MediaQuery.of(context).size.height,
                           width: MediaQuery.of(context).size.width * 0.3,
 
@@ -233,6 +237,7 @@ class Home extends StatelessWidget {
                                     i < controller.albums.length;
                                     i++)
                                   //for (ScreenshotAlbum album in controller.albums)
+
                                   InkWell(
                                     onTap: () =>
                                         {controller.setCurrentAlbumId(i)},
@@ -243,7 +248,7 @@ class Home extends StatelessWidget {
                                       width: MediaQuery.of(context).size.width *
                                           0.1,
                                       child: Container(
-                                        margin: EdgeInsets.all(4),
+                                        margin: EdgeInsets.all(8),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(24),
@@ -254,27 +259,33 @@ class Home extends StatelessWidget {
                                                   controller
                                                       .albums[i].screenshots[0],
                                                   fit: BoxFit.cover),
-                                              ClipRRect(
+
+                                              /*  ClipRRect(
                                                 child: BackdropFilter(
                                                   filter: ImageFilter.blur(
                                                       sigmaX: 2, sigmaY: 2),
-                                                  child: Container(
-                                                    color: Colors.grey
-                                                        .withOpacity(0.1),
-                                                    alignment: Alignment.center,
-                                                    child: Text(
-                                                      controller.albums[i].name,
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        backgroundColor:
-                                                            Colors.black54,
-                                                      ),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                    ),
+                                                  child: */
+                                              Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.1,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.1,
+                                                color: Colors.black54,
+                                                alignment: Alignment.center,
+                                                child: Text(
+                                                  controller.albums[i].name,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
                                                   ),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
+                                              /*       ),
+                                              ), */
                                             ],
                                           ),
                                         ),
@@ -313,7 +324,9 @@ class Home extends StatelessWidget {
                         ),
                         GetBuilder<AlbumController>(
                           builder: (controller) => InkWell(
-                            onTap: () => {},
+                            onTap: () => {
+                              controller.toggleAppInfo(),
+                            },
                             child: Container(
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(24),
@@ -400,56 +413,59 @@ class Home extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    Container(
-                                      // height: MediaQuery.of(context).size.height * 0.3,
-                                      height: 654,
-                                      width: 300,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(24),
-                                        color: Colors.black54,
-                                      ),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            '${controller.albums[controller.currentAlbumId].name}',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 24,
+                                    if (controller.showAppInfo)
+                                      Container(
+                                        // height: MediaQuery.of(context).size.height * 0.3,
+                                        height: 654,
+                                        width: 300,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(24),
+                                          color: Colors.black54,
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              '${controller.albums[controller.currentAlbumId].name}',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 24,
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 12,
-                                          ),
-                                          Text(
-                                            '${controller.albums[controller.currentAlbumId].description}',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 21,
+                                            SizedBox(
+                                              height: 12,
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 12,
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              for (var tag in controller
-                                                  .albums[
-                                                      controller.currentAlbumId]
-                                                  .tags)
-                                                Card(
-                                                  margin: EdgeInsets.all(4),
-                                                  child: Padding(
-                                                    padding: EdgeInsets.all(8),
-                                                    child: Text(tag),
+                                            Text(
+                                              '${controller.albums[controller.currentAlbumId].description}',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 21,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 12,
+                                            ),
+                                            Wrap(
+                                              children: [
+                                                for (var tag in controller
+                                                    .albums[controller
+                                                        .currentAlbumId]
+                                                    .tags)
+                                                  Card(
+                                                    margin: EdgeInsets.all(4),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8),
+                                                      child: Text(tag),
+                                                    ),
                                                   ),
-                                                ),
-                                            ],
-                                          )
-                                        ],
+                                              ],
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                    ),
                                   ],
                                 ),
                               ),
