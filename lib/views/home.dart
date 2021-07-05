@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                       ),
-                                      textAlign: TextAlign.start,
+                                      textAlign: TextAlign.center,
                                     ),
                                     Text(
                                       'Since 2019 I have been working in an IoT company as a software engineer. Initially, my responsibilities included backend development (nodejs, python, rest api, rpa, nginx, linux, etc.)',
