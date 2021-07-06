@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ruslan_badaev_site/controllers/album_controller.dart';
 import 'package:ruslan_badaev_site/controllers/test_controller.dart';
@@ -352,8 +353,10 @@ class Home extends StatelessWidget {
                                                 '${controller.albums[controller.currentAlbumId].name}',
                                                 style: TextStyle(
                                                   color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
                                                   fontSize: 24,
                                                 ),
+                                                textAlign: TextAlign.center,
                                               ),
                                               SizedBox(
                                                 height: 12,
@@ -364,6 +367,7 @@ class Home extends StatelessWidget {
                                                   color: Colors.white,
                                                   fontSize: 21,
                                                 ),
+                                                textAlign: TextAlign.center,
                                               ),
                                               SizedBox(
                                                 height: 12,
