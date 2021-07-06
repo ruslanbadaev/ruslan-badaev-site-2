@@ -178,6 +178,7 @@ class Home extends StatelessWidget {
 
                             child: GetBuilder<AlbumController>(
                               builder: (controller) => Wrap(
+                                alignment: WrapAlignment.center,
                                 children: [
                                   for (var i = 0;
                                       i < controller.albums.length;
@@ -188,12 +189,8 @@ class Home extends StatelessWidget {
                                       onTap: () =>
                                           {controller.setCurrentAlbumId(i)},
                                       child: SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
+                                        height: 160,
+                                        width: 160,
                                         child: Container(
                                           margin: EdgeInsets.all(8),
                                           child: ClipRRect(
@@ -207,14 +204,16 @@ class Home extends StatelessWidget {
                                                         .screenshots[0],
                                                     fit: BoxFit.cover),
                                                 Container(
-                                                  height: MediaQuery.of(context)
+                                                  height: 160,
+                                                  width: 160,
+                                                  /*       height: MediaQuery.of(context)
                                                           .size
                                                           .width *
                                                       0.1,
                                                   width: MediaQuery.of(context)
                                                           .size
                                                           .width *
-                                                      0.1,
+                                                      0.1, */
                                                   color: Colors.black54,
                                                   alignment: Alignment.center,
                                                   child: Text(
@@ -359,7 +358,7 @@ class Home extends StatelessWidget {
                                                 textAlign: TextAlign.center,
                                               ),
                                               SizedBox(
-                                                height: 12,
+                                                height: 24,
                                               ),
                                               Text(
                                                 '${controller.albums[controller.currentAlbumId].description}',
@@ -370,7 +369,7 @@ class Home extends StatelessWidget {
                                                 textAlign: TextAlign.center,
                                               ),
                                               SizedBox(
-                                                height: 12,
+                                                height: 24,
                                               ),
                                               Wrap(
                                                 children: [
