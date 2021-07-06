@@ -169,6 +169,7 @@ class Home extends StatelessWidget {
                             height: 56,
                           ),
                           Container(
+                            margin: EdgeInsets.all(24),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24),
                               color: Colors.white.withOpacity(.6),
