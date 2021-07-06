@@ -8,11 +8,15 @@ import 'package:ruslan_badaev_site/controllers/test_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import "package:hovering/hovering.dart";
 import 'package:ruslan_badaev_site/models/screenshot_album.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatelessWidget {
   final testController = Get.put(TestController());
   final albumController = Get.put(AlbumController());
-
+  void _launchGithubURL() async =>
+      await canLaunch('https://github.com/ruslanbadaev')
+          ? await launch('https://github.com/ruslanbadaev')
+          : throw 'Could not launch https://github.com/ruslanbadaev';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,7 +159,7 @@ class Home extends StatelessWidget {
                           Text(
                             'My projects',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.pink.withOpacity(.4),
                               fontSize: 21,
                               fontWeight: FontWeight.bold,
                             ),
@@ -402,9 +406,73 @@ class Home extends StatelessWidget {
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Row(
-                          children: [],
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Telegram: ',
+                              style: TextStyle(
+                                color: Colors.blueGrey,
+                                fontSize: 21,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              '@ruslanbadaev',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        InkWell(
+                          onTap: () => _launchGithubURL(),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Github: ',
+                                style: TextStyle(
+                                  color: Colors.blueGrey,
+                                  fontSize: 21,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'https://github.com/ruslanbadaev',
+                                style: TextStyle(
+                                  color: Colors.black54,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Email: ',
+                              style: TextStyle(
+                                color: Colors.blueGrey,
+                                fontSize: 21,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'r.badaeff@gmail.com',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
